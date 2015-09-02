@@ -17,15 +17,18 @@ public class Main
         
         Loader loader = (Loader) context.getBean("loader");
         
-        // load from API to DB
-//        loader.loadDataAPI2DB();
+        //Q1: load from API to DB
+        loader.getUsers();
 
+        //Q2: under SQL folder
         
-        // load DB to JSON files
-//        loader.loadDataDB2File(jsonMapper, "/Users/yaoxu/Desktop/test/text2.json");
-
-        // load DB to CSV files
-        loader.loadDataDB2File( csvMapper, "/Users/yaoxu/Desktop/test/text1.csv");
+        //Q3: load last 3 users from DB to JSON files
+        loader.loadLast32File(jsonMapper, "/Users/yaoxu/Desktop/test/last3User.json");
+        loader.loadLast32File( csvMapper, "/Users/yaoxu/Desktop/test/last3User.csv");
+        
+        
+        //Q3: load user count
+        loader.loadCountUser2File(jsonMapper, "/Users/yaoxu/Desktop/test/usercount.json");
+        loader.loadCountUser2File( csvMapper, "/Users/yaoxu/Desktop/test/usercount.csv");
     }
-
 }

@@ -1,7 +1,6 @@
 package machine.database.entity;
 
 import static javax.persistence.GenerationType.IDENTITY;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "install_user")
 public class User implements java.io.Serializable
 {
     private static final long serialVersionUID = -2393420889013247416L;
@@ -20,7 +19,7 @@ public class User implements java.io.Serializable
 
     private String name;
 
-    private Date registered;
+    private Long registered;
 
     private String nationality;
 
@@ -60,12 +59,12 @@ public class User implements java.io.Serializable
     }
 
     @Column(name = "registered")
-    public Date getRegistered()
+    public Long getRegistered()
     {
         return registered;
     }
 
-    public void setRegistered(Date registered)
+    public void setRegistered(Long registered)
     {
         this.registered = registered;
     }

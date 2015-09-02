@@ -24,7 +24,7 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/jasper_local" />
+			value="jdbc:mysql://localhost:3306/leetcode" />
 		<property name="username" value="root" />
 		<property name="password" value="password" />
 	</bean>

@@ -1,7 +1,9 @@
 package machine.mapper;
 
 import org.springframework.stereotype.Component;
+
 import machine.database.entity.User;
+import machine.database.entity.UserCount;
 
 @Component("CSVMapper")
 public class CSVMapper implements Mapper
@@ -24,6 +26,26 @@ public class CSVMapper implements Mapper
         result += ",";
         if(user.getNationality() != null) {
             result += user.getNationality();
+        }
+        result += "\n";
+        return result;
+    }
+    
+    
+    //nationality, gender, amount
+    @Override
+    public String convert(UserCount uc) {
+    	String result = "";
+    	if(uc.getNationality() != null) {
+            result += uc.getNationality();
+        }
+    	result += ",";
+        if(uc.getGender() != null) {
+            result += uc.getGender();
+        }
+        result += ",";
+        if(uc.getAmount() != null) {
+            result += uc.getAmount();
         }
         result += "\n";
         return result;

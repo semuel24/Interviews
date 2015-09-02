@@ -26,7 +26,7 @@
 
 	<!-- outgoing APIs -->
 	<bean id="machineTarget" class="machine.loader.WebTargetFactory">
-		<property name="serverURL" value="http://demo8887204.mockable.io" />
+		<property name="serverURL" value="https://randomuser.me" />
 	</bean>
 	<bean id="machineClient" class="machine.loader.MachineClient">
 		<property name="target">
