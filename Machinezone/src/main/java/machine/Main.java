@@ -18,14 +18,14 @@ public class Main
         Loader loader = (Loader) context.getBean("loader");
         
         // load from API to DB
-//        loader.loadDataAPI2DB();
+        loader.loadDataAPI2DB();
 
         
         // load DB to JSON files
 //        loader.loadDataDB2File(jsonMapper, "/Users/yaoxu/Desktop/test/text2.json");
 
         // load DB to CSV files
-        loader.loadDataDB2File( csvMapper, "/Users/yaoxu/Desktop/test/text1.csv");
+        loader.loadDataDB2File( csvMapper, "/Users/yaoxu/Desktop/test/text2.csv");
     }
 
 }

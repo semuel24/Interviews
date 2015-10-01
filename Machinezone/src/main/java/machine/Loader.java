@@ -35,7 +35,7 @@ public class Loader
     {
         int tokenCapacity = 1;
         int limitRate = 1;
-        int requestTotal = 600;
+        int requestTotal = 6;
         int maxFail = 20;
 
         TokenBucket bucket =
