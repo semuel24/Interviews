@@ -1,0 +1,1 @@
+select * from install_user order by registered desc limit 0, 3;

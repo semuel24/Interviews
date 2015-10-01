@@ -1,8 +1,12 @@
 package machine.loader;
 
+import java.io.IOException;
+
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+
+import org.codehaus.jackson.map.ObjectMapper;
 
 public class MachineClient
 {
@@ -23,13 +27,24 @@ public class MachineClient
             return null;
         }
 
-        CallResult rt = target
-                .path("/haha").request()
-//                .header("APIKey", appImportApiKey)
+        String rt = target
+                .path("/api/").request()
                 .header("Accept", "application/json")
                 .header("Content-Type", "application/json")
-                .get(CallResult.class);
+                .get(String.class);
 
-        return rt;
+        
+        ObjectMapper mapper = new ObjectMapper();
+        CallResult result = null;
+        try {
+        	result = mapper.readValue(rt, CallResult.class);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return result;
     }
+    
+    
+    
 }
